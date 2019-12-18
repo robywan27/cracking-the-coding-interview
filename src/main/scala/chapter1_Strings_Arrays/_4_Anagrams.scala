@@ -1,4 +1,4 @@
-package chapter1
+package chapter1_Strings_Arrays
 
 import util.control.Breaks._
 
@@ -9,7 +9,7 @@ object _4_Anagrams {
       remove the matched character from the second string. In case there was no match the two words are not anagrams,
       so break out of the inner cycle and return false.
 
-      Time complexity: apx O(n^2) - two scans, even though the second cycle gets shorter at each iteration
+      Time complexity: between O(n*logn) and O(n^2) - two scans, even though the second cycle gets shorter at each iteration
       Space complexity: O(1) - no additional data structures are used
    */
   def anagrams(s1: String, s2: String): Boolean = {

@@ -1,9 +1,11 @@
 import org.scalatest.FunSuite
-import chapter1._1_UniqueCharacters
-import chapter1._2_ReverseString
-import chapter1._4_Anagrams
-import chapter1._5_ReplaceSpaces
-import chapter1._8_Rotation
+import chapter1_Strings_Arrays._1_UniqueCharacters
+import chapter1_Strings_Arrays._2_ReverseString
+import chapter1_Strings_Arrays._3_RemoveDuplicates
+import chapter1_Strings_Arrays._4_Anagrams
+import chapter1_Strings_Arrays._5_ReplaceSpaces
+import chapter1_Strings_Arrays._7_ResetRowColumn
+import chapter1_Strings_Arrays._8_Rotation
 
 class Chapter1Test extends FunSuite {
   test("_1_UniqueCharacters") {
@@ -36,6 +38,17 @@ class Chapter1Test extends FunSuite {
   }
 
 
+  test("_3_RemoveDuplicates") {
+    assert(_3_RemoveDuplicates.removeDuplicates("") == "")
+    assert(_3_RemoveDuplicates.removeDuplicates("A") == "A")
+    assert(_3_RemoveDuplicates.removeDuplicates("AAAAA") == "A")
+    assert(_3_RemoveDuplicates.removeDuplicates("AAABBBCCCC") == "ABC")
+    assert(_3_RemoveDuplicates.removeDuplicates("PINEAPPLE") == "PINEAL")
+    assert(_3_RemoveDuplicates.removeDuplicates("GUITAR") == "GUITAR")
+    assert(_3_RemoveDuplicates.removeDuplicates("supercalifragilisticexpialidocious") == "supercalifgtxdo")
+  }
+
+
   test("_4_Anagrams") {
     assert(_4_Anagrams.anagrams("restful", "fluster") === true)
     assert(_4_Anagrams.anagrams("placebo", "obecalp") === true)
@@ -65,6 +78,23 @@ class Chapter1Test extends FunSuite {
 
     assert(_5_ReplaceSpaces.replaceSpaces_2("This is a string with many spaces") === "This%20is%20a%20string%20with%20many%20spaces")
     assert(_5_ReplaceSpaces.replaceSpaces_2("This string   has  multiple contiguous    spaces") === "This%20string%20%20%20has%20%20multiple%20contiguous%20%20%20%20spaces")
+  }
+
+
+  test("_7_ResetRowColumn") {
+    assert(_7_ResetRowColumn.resetRowColumn(Array(Array(1, 2, 3, 0), Array(1, 0, 4, 4), Array(2, 3, 7, 2)))
+      === Array(Array(0, 0, 0, 0), Array(0, 0, 0, 0), Array(2, 0, 7, 0)))
+    assert(_7_ResetRowColumn.resetRowColumn(Array(Array(1, 2, 3, 4), Array(1, 1, 4, 4), Array(2, 3, 7, 2)))
+      === Array(Array(1, 2, 3, 4), Array(1, 1, 4, 4), Array(2, 3, 7, 2)))
+    assert(_7_ResetRowColumn.resetRowColumn(Array(Array(7, 0, 5, 4, 2), Array(0, 6, 2, 0, 5), Array(8, 9, 7, 0, 1), Array(7, 6, 5, 2, 4)))
+      === Array(Array(0, 0, 0, 0, 0), Array(0, 0, 0, 0, 0), Array(0, 0, 0, 0, 0), Array(0, 0, 5, 0, 4)))
+
+    assert(_7_ResetRowColumn.resetRowColumn_2(Array(Array(1, 2, 3, 0), Array(1, 0, 4, 4), Array(2, 3, 7, 2)))
+      === Array(Array(0, 0, 0, 0), Array(0, 0, 0, 0), Array(2, 0, 7, 0)))
+    assert(_7_ResetRowColumn.resetRowColumn_2(Array(Array(1, 2, 3, 4), Array(1, 1, 4, 4), Array(2, 3, 7, 2)))
+      === Array(Array(1, 2, 3, 4), Array(1, 1, 4, 4), Array(2, 3, 7, 2)))
+    assert(_7_ResetRowColumn.resetRowColumn_2(Array(Array(7, 0, 5, 4, 2), Array(0, 6, 2, 0, 5), Array(8, 9, 7, 0, 1), Array(7, 6, 5, 2, 4)))
+      === Array(Array(0, 0, 0, 0, 0), Array(0, 0, 0, 0, 0), Array(0, 0, 0, 0, 0), Array(0, 0, 5, 0, 4)))
   }
 
 

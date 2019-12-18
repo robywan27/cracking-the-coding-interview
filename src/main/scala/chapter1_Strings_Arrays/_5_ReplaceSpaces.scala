@@ -1,4 +1,4 @@
-package chapter1
+package chapter1_Strings_Arrays
 
 object _5_ReplaceSpaces {
   /*

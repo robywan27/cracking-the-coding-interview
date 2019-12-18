@@ -1,4 +1,4 @@
-package chapter1
+package chapter1_Strings_Arrays
 
 object _8_Rotation {
   /*
@@ -10,7 +10,7 @@ object _8_Rotation {
           - if it is so, check the unmatched part of s1 from the beginning until index i and see if it matches with
             characters of s2 starting from index (length of s1 - i)
 
-      Time complexity: O(n^2) - scan s1 in isRotation and s2 in isSubstring
+      Time complexity: O(n^2) + isSubstring complexity - scan s1 in isRotation and apply isSubstring
       Space complexity: O(1) - no additional data structure
    */
   def isRotation(s1: String, s2: String): Boolean = {
@@ -33,17 +33,21 @@ object _8_Rotation {
 
   /*
     Solution 2.
+      Time complexity: complexity of isSubstring
+      Space complexity: O(n) - another s1 copy is created
    */
   def isRotation_2(s1: String, s2: String): Boolean = if (isSubstring(s1 + s1, s2)) true else false
 
   /*
-    Assume s1 and s2 start with the same letter. Time complexity is O(n) because s1 is scanned.
+    Is s2 substring of s1? Time complexity of this algorithm is probably O(n*logn) or O(n^2
    */
   @scala.annotation.tailrec
   def isSubstring(s1: String, s2: String): Boolean = {
     @scala.annotation.tailrec
     def helper(s1: String, s2: String): Boolean = {
-      if (s2.isEmpty)
+      if (s1.length < s2.length)
+        false
+      else if (s2.isEmpty)
         true
       else if (s1.isEmpty)
         false

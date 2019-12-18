@@ -1,4 +1,4 @@
-package chapter1
+package chapter1_Strings_Arrays
 
 /*
   String has C-style format with null pointer at the end: "abcd" as "abcd\0"

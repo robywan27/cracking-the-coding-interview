@@ -2,16 +2,15 @@ package chapter1_Strings_Arrays
 
 object _8_Rotation {
   /*
-    Solution 1.
-      The algorithm goes like:
-        - scan s1
-        - when you match a character of s1 at index i with the first character of s2, check if the remaining part
-          of s1 is substring of s2
-          - if it is so, check the unmatched part of s1 from the beginning until index i and see if it matches with
-            characters of s2 starting from index (length of s1 - i)
+    The algorithm goes like:
+      - scan s1
+      - when you match a character of s1 at index i with the first character of s2, check if the remaining part
+        of s1 is substring of s2
+        - if it is so, check the unmatched part of s1 from the beginning until index i and see if it matches with
+          characters of s2 starting from index (length of s1 - i)
 
-      Time complexity: O(n^2) + isSubstring complexity - scan s1 in isRotation and apply isSubstring
-      Space complexity: O(1) - no additional data structure
+    Time complexity: O(n^2) + isSubstring complexity - scan s1 in isRotation and apply isSubstring
+    Space complexity: O(1) - no additional data structure
    */
   def isRotation(s1: String, s2: String): Boolean = {
     if (s1.length != s2.length)
@@ -32,14 +31,13 @@ object _8_Rotation {
   }
 
   /*
-    Solution 2.
-      Time complexity: complexity of isSubstring
-      Space complexity: O(n) - another s1 copy is created
+    Time complexity: complexity of isSubstring
+    Space complexity: O(n) - another s1 copy is created
    */
   def isRotation_2(s1: String, s2: String): Boolean = if (isSubstring(s1 + s1, s2)) true else false
 
   /*
-    Is s2 substring of s1? Time complexity of this algorithm is probably O(n*logn) or O(n^2
+    Is s2 substring of s1? Time complexity of this algorithm is probably O(n*logn) or O(n^2)
    */
   @scala.annotation.tailrec
   def isSubstring(s1: String, s2: String): Boolean = {

@@ -91,9 +91,9 @@ class Chapter1Test extends FunSuite {
 
     assert(_7_ResetRowColumn.resetRowColumn_2(Array(Array(1, 2, 3, 0), Array(1, 0, 4, 4), Array(2, 3, 7, 2)))
       === Array(Array(0, 0, 0, 0), Array(0, 0, 0, 0), Array(2, 0, 7, 0)))
-    assert(_7_ResetRowColumn.resetRowColumn_2(Array(Array(1, 2, 3, 4), Array(1, 1, 4, 4), Array(2, 3, 7, 2)))
+    assert(_7_ResetRowColumn.resetRowColumn_2 (Array(Array(1, 2, 3, 4), Array(1, 1, 4, 4), Array(2, 3, 7, 2)))
       === Array(Array(1, 2, 3, 4), Array(1, 1, 4, 4), Array(2, 3, 7, 2)))
-    assert(_7_ResetRowColumn.resetRowColumn_2(Array(Array(7, 0, 5, 4, 2), Array(0, 6, 2, 0, 5), Array(8, 9, 7, 0, 1), Array(7, 6, 5, 2, 4)))
+    assert(_7_ResetRowColumn.resetRowColumn_2 (Array(Array(7, 0, 5, 4, 2), Array(0, 6, 2, 0, 5), Array(8, 9, 7, 0, 1), Array(7, 6, 5, 2, 4)))
       === Array(Array(0, 0, 0, 0, 0), Array(0, 0, 0, 0, 0), Array(0, 0, 0, 0, 0), Array(0, 0, 5, 0, 4)))
   }
 

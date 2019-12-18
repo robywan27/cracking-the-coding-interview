@@ -2,13 +2,12 @@ package chapter1_Strings_Arrays
 
 object _7_ResetRowColumn {
   /*
-    Solution 1.
-      Scan the matrix to find the coordinates of 0 elements and save them in an array.
-      Scan the array and zero all positions in same row and column for each element.
+    Scan the matrix to find the coordinates of 0 elements and save them in an array.
+    Scan the array and zero all positions in same row and column for each element.
 
-      Time complexity: O(m^3*n^2) - first scan of the matrix, then again scan of the elements of the array which may be
-        almost all the matrix elements
-      Space complexity: O(m*n) - the array may contain almost all elements in the matrix
+    Time complexity: O(m^2*n^2) - first scan of the matrix, then again scan of the elements of the array which may be
+      almost all the matrix elements
+    Space complexity: O(m*n) - the array may contain almost all elements in the matrix
    */
   def resetRowColumn(mat: Array[Array[Int]]): Array[Array[Int]] = {
     val m = mat.length
@@ -34,12 +33,11 @@ object _7_ResetRowColumn {
   }
 
   /*
-    Solution 2.
-      Scan the matrix and store a dummy value (1) at the right row/column index in two ancillary arrays.
-      Scan the matrix again and check the dummy value in the auxiliary arrays at the corresponding row/column index.
+    Scan the matrix and store a dummy value (1) at the right row/column index in two ancillary arrays.
+    Scan the matrix again and check the dummy value in the auxiliary arrays at the corresponding row/column index.
 
-      Time complexity: O(m^2*n^2) - scan the matrix twice
-      Space complexity: O(m*n) - two arrays of the dimensions of the matrix are created
+    Time complexity: O(m*n) - scan the matrix twice
+    Space complexity: O(m*n) - two arrays of the dimensions of the matrix are created
    */
   def resetRowColumn_2(mat: Array[Array[Int]]): Array[Array[Int]] = {
     val m = mat.length

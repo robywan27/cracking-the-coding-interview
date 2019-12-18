@@ -2,12 +2,11 @@ package chapter1_Strings_Arrays
 
 object _1_UniqueCharacters {
   /*
-    Solution 1.
-      Employs a List as auxiliary data structure to keep track of letters encountered. If a letter is found in the list,
-      then the string has not unique characters.
+    Employs a List as auxiliary data structure to keep track of letters encountered. If a letter is found in the list,
+    then the string has not unique characters.
 
-      Time complexity: O(n) - scan of the string
-      Space complexity: O(n) - a new list is created
+    Time complexity: O(n) - scan of the string
+    Space complexity: O(n) - a new list is created
    */
   def hasAllUniqueCharacters(s: String): Boolean = {
     @scala.annotation.tailrec
@@ -22,12 +21,11 @@ object _1_UniqueCharacters {
   }
 
   /*
-    Solution 2.
-      No data structures are used but two cycles are needed. If the same letter is encountered twice in the inner loop,
-      then the string has not unique characters. Note that the first match is with itself.
+    No data structures are used but two cycles are needed. If the same letter is encountered twice in the inner loop,
+    then the string has not unique characters. Note that the first match is with itself.
 
-      Time complexity: O(n^2) - double scan of the string
-      Space complexity: O(1) - no data structure created
+    Time complexity: O(n^2) - two nested cycles
+    Space complexity: O(1) - no data structure created
    */
   def hasAllUniqueCharacters_2(s: String): Boolean = {
     for (i <- s) {
@@ -43,11 +41,10 @@ object _1_UniqueCharacters {
   }
 
   /*
-    Solution 3.
-      Sort the string and check if any contiguous letters are the same.
+    Sort the string and check if any contiguous letters are the same.
 
-      Time complexity: O(n) or more - sorting plus linear scan of string
-      Space complexity: O(1) - no data structure created
+    Time complexity: O(n) or more - sorting plus linear scan of string
+    Space complexity: O(1) - no data structure created
    */
   def hasAllUniqueCharacters_3(s: String): Boolean = {
     val sortedS = s.toSeq.sortWith(_ < _).unwrap
@@ -57,11 +54,10 @@ object _1_UniqueCharacters {
   }
 
   /*
-    Solution 4.
-      Convert the string to set and compare length differences. Remember that sets have only distinct elements.
+    Convert the string to set and compare length differences. Remember that sets have only distinct elements.
 
-      Time complexity: O(n) - the conversion to set
-      Space complexity: O(n) - creation of a new set
+    Time complexity: O(n) - the conversion to set
+    Space complexity: O(n) - creation of a new set
    */
   def hasAllUniqueCharacters_4(s: String): Boolean = {
     if (s.toSet.size != s.length) false

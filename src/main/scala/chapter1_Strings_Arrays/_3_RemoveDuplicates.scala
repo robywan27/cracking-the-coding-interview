@@ -2,11 +2,11 @@ package chapter1_Strings_Arrays
 
 object _3_RemoveDuplicates {
   /*
-    Solution 1.
+    Recursive solution.
 
-      Time complexity: between O(n*logn) and O(n^2) - s is scanned, and for each letter the remaining of the word is scanned,
-        which means at each new iteration the word shrinks
-      Space complexity: O(1)
+    Time complexity: between O(n*logn) and O(n^2) - s is scanned, and for each letter the remaining of the word is scanned,
+      which means at each new iteration the word shrinks
+    Space complexity: O(1)
    */
   def removeDuplicates(s: String): String = {
     @scala.annotation.tailrec

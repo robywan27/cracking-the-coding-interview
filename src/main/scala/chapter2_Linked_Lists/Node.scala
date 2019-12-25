@@ -1,5 +1,8 @@
 package chapter2_Linked_Lists
 
+// In Scala other strategies could be used instead of null such as using the Option type.
+// For the scope of these exercises I am going to stick to using null as the point is in the problem solving logic
+// than proper design.
 class Node[A](var data: A, var next: Node[A] = null) {
   def appendToTail(d: A): Unit = {
     val newEntry: Node[A] = new Node(d)

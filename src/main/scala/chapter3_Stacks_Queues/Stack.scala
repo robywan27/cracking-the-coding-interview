@@ -1,19 +1,19 @@
 package chapter3_Stacks_Queues
 
-import chapter2_Linked_Lists.Node
+import chapter2_Linked_Lists.SingleLinkedListNode
 
-class Stack[A](var top: Node[A] = null) {
+class Stack[A](var top: SingleLinkedListNode[A] = null) {
   def push(data: A): Unit = {
     val prev = top
-    top = new Node(data)
+    top = new SingleLinkedListNode(data)
     top.next = prev
   }
 
-  def pop: Node[A] = {
+  def pop: SingleLinkedListNode[A] = {
     if (top != null) {
       val headContent = top.data
       top = top.next
-      return new Node(headContent)
+      return new SingleLinkedListNode(headContent)
     }
     null
   }

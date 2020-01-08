@@ -5,7 +5,7 @@ object _1_UniqueCharacters {
     Employs a List as auxiliary data structure to keep track of letters encountered. If a letter is found in the list,
     then the string has not unique characters.
 
-    Time complexity: O(n) - scan of the string
+    Time complexity: O(n^2) - scan of the string and the list which gets longer every cycle
     Space complexity: O(n) - a new list is created
    */
   def hasAllUniqueCharacters(s: String): Boolean = {

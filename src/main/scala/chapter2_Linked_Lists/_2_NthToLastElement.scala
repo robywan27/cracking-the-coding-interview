@@ -7,12 +7,12 @@ object _2_NthToLastElement {
     Time complexity: O(n) - scan the list twice
     Space complexity: O(1)
    */
-  def nthElementToLast[A](node: Node[A], pos: Int): Node[A] = {
+  def nthElementToLast[A](node: SingleLinkedListNode[A], pos: Int): SingleLinkedListNode[A] = {
     val listLength = node.length
     val nthToLastPosition = listLength - pos + 1
 
     @scala.annotation.tailrec
-    def loop(node: Node[A], c: Int): Node[A] = if (c == nthToLastPosition) node else loop(node.next, c + 1)
+    def loop(node: SingleLinkedListNode[A], c: Int): SingleLinkedListNode[A] = if (c == nthToLastPosition) node else loop(node.next, c + 1)
 
     loop(node, 1)
   }
@@ -24,7 +24,7 @@ object _2_NthToLastElement {
     Time complexity: O(n) - scan the list once
     Space complexity: O(1)
    */
-  def nthElementToLast_2[A](head: Node[A], pos: Int): Node[A] = {
+  def nthElementToLast_2[A](head: SingleLinkedListNode[A], pos: Int): SingleLinkedListNode[A] = {
     var ptr1 = head
     var ptr2 = head
 
@@ -42,8 +42,8 @@ object _2_NthToLastElement {
 
 
   def main(args: Array[String]): Unit = {
-    val sl = new Node(1, new Node(3, new Node(7, new Node(3,
-      new Node(5, new Node(6, new Node(6, new Node(2))))))))
+    val sl = new SingleLinkedListNode(1, new SingleLinkedListNode(3, new SingleLinkedListNode(7, new SingleLinkedListNode(3,
+      new SingleLinkedListNode(5, new SingleLinkedListNode(6, new SingleLinkedListNode(6, new SingleLinkedListNode(2))))))))
     println(nthElementToLast(sl, 5).stringRepresentation)
     println(nthElementToLast_2(sl, 5).stringRepresentation)
   }

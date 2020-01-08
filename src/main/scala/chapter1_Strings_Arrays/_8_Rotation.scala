@@ -43,14 +43,10 @@ object _8_Rotation {
   def isSubstring(s1: String, s2: String): Boolean = {
     @scala.annotation.tailrec
     def helper(s1: String, s2: String): Boolean = {
-      if (s1.length < s2.length)
-        false
-      else if (s2.isEmpty)
+      if (s2.isEmpty)
         true
-      else if (s1.isEmpty)
-        false
       else
-        if (s1(0) != s2(0))   false
+        if (s1.length < s2.length || s1(0) != s2(0))   false
         else helper(s1.substring(1), s2.substring(1))
     }
 

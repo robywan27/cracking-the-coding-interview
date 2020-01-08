@@ -8,7 +8,7 @@ object _3_DeleteNodeInTheMiddle {
     Time complexity: O(1)
     Space complexity: O(1)
    */
-  def deleteNodeInTheMiddle[A](n: Node[A]): Unit = {
+  def deleteNodeInTheMiddle[A](n: SingleLinkedListNode[A]): Unit = {
     val curr = n
     val next = n.next
     curr.data = next.data
@@ -17,8 +17,8 @@ object _3_DeleteNodeInTheMiddle {
 
 
   def main(args: Array[String]): Unit = {
-    var sl = new Node('c', new Node('d', new Node('e')))
-    var sl2 = new Node('a', new Node('b', sl))
+    var sl = new SingleLinkedListNode('c', new SingleLinkedListNode('d', new SingleLinkedListNode('e')))
+    var sl2 = new SingleLinkedListNode('a', new SingleLinkedListNode('b', sl))
 
     deleteNodeInTheMiddle(sl)
     println(sl.stringRepresentation)

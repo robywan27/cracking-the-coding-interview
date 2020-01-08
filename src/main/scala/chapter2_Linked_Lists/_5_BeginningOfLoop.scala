@@ -7,9 +7,9 @@ object _5_BeginningOfLoop {
     Time complexity: O(n) - scan nodes once
     Space complexity: O(n)
    */
-  def beginningOfLoop[A](head: Node[A]): Node[A] = {
+  def beginningOfLoop[A](head: SingleLinkedListNode[A]): SingleLinkedListNode[A] = {
     var curr = head
-    var distinctNodes: Array[Node[A]] = Array()
+    var distinctNodes: Array[SingleLinkedListNode[A]] = Array()
 
     while (curr.next != null) {
       if (distinctNodes.contains(curr))
@@ -24,9 +24,9 @@ object _5_BeginningOfLoop {
 
 
   def main(args: Array[String]): Unit = {
-    val n: Node[Int] = new Node(1)
-    val circularList: Node[Int] = new Node(5, new Node(2, n))
-    val l = new Node(5, new Node(7, n))
+    val n: SingleLinkedListNode[Int] = new SingleLinkedListNode(1)
+    val circularList: SingleLinkedListNode[Int] = new SingleLinkedListNode(5, new SingleLinkedListNode(2, n))
+    val l = new SingleLinkedListNode(5, new SingleLinkedListNode(7, n))
     circularList.appendNodeToTail(l)
     val bol = beginningOfLoop(circularList)
     println(bol)

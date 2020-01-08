@@ -13,7 +13,7 @@ object _1_RemoveDuplicateNodes {
     Time complexity: O(n) - the list is traversed once
     Space complexity: O(n) - one array
    */
-  def removeDuplicates[A: ClassTag](head: Node[A]): Unit = {
+  def removeDuplicates[A: ClassTag](head: SingleLinkedListNode[A]): Unit = {
     var distinctDataElements = Array[A]()
     var previous = head
     var curr = head
@@ -36,7 +36,7 @@ object _1_RemoveDuplicateNodes {
     Time complexity: maybe O(n^2) - the list is scanned first time N times, second time N - 1 times, etc
     Space complexity: O(1)
    */
-  def removeDuplicates_2[A](head: Node[A]): Unit = {
+  def removeDuplicates_2[A](head: SingleLinkedListNode[A]): Unit = {
     var nodeToCompare = head
     var prev = head
     var curr = head.next
@@ -63,16 +63,16 @@ object _1_RemoveDuplicateNodes {
     Time complexity: O(n) - the list is traversed once
     Space complexity: O(n^2) - two lists with n elements each
    */
-  def removeDuplicates_3[A: ClassTag](node: Node[A]): Option[Node[A]] = {
+  def removeDuplicates_3[A: ClassTag](node: SingleLinkedListNode[A]): Option[SingleLinkedListNode[A]] = {
     @scala.annotation.tailrec
-    def helper(node: Node[A], distinctDataElements: ListBuffer[A], newNode: Option[Node[A]]): Option[Node[A]] = {
+    def helper(node: SingleLinkedListNode[A], distinctDataElements: ListBuffer[A], newNode: Option[SingleLinkedListNode[A]]): Option[SingleLinkedListNode[A]] = {
       if (node.next == null)
         newNode
       else {
         if (!distinctDataElements.contains(node.data)) {
           distinctDataElements += node.data
           newNode match {
-            case None => helper(node.next, distinctDataElements, Some(new Node(node.data)))
+            case None => helper(node.next, distinctDataElements, Some(new SingleLinkedListNode(node.data)))
             case Some(n) => {
               n.appendToTail(node.data)
               helper(node.next, distinctDataElements, Some(n))
@@ -90,10 +90,10 @@ object _1_RemoveDuplicateNodes {
 
 
   def main(args: Array[String]): Unit = {
-    val sl = new Node(1, new Node(3, new Node(7, new Node(3,
-      new Node(5, new Node(6, new Node(6, new Node(2))))))))
+    val sl = new SingleLinkedListNode(1, new SingleLinkedListNode(3, new SingleLinkedListNode(7, new SingleLinkedListNode(3,
+      new SingleLinkedListNode(5, new SingleLinkedListNode(6, new SingleLinkedListNode(6, new SingleLinkedListNode(2))))))))
     println(sl.stringRepresentation)                           // 1 -> 3 -> 7 -> 3 -> 5 -> 6 -> 6 -> 2
-    val sl2 = new Node(1, new Node(2, new Node(3, new Node(4, new Node(3, new Node(2))))))
+    val sl2 = new SingleLinkedListNode(1, new SingleLinkedListNode(2, new SingleLinkedListNode(3, new SingleLinkedListNode(4, new SingleLinkedListNode(3, new SingleLinkedListNode(2))))))
     println(sl2.stringRepresentation)                          // 1 -> 2 -> 3 -> 4 -> 3 -> 2
 
     /*removeDuplicates(sl)

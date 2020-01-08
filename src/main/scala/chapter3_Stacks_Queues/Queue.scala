@@ -1,24 +1,24 @@
 package chapter3_Stacks_Queues
 
-import chapter2_Linked_Lists.Node
+import chapter2_Linked_Lists.SingleLinkedListNode
 
-class Queue[A](var first: Node[A] = null, var last: Node[A] = null) {
+class Queue[A](var first: SingleLinkedListNode[A] = null, var last: SingleLinkedListNode[A] = null) {
   def enqueue(data: A): Unit = {
     if (first != null) {
-      last.next = new Node(data)
+      last.next = new SingleLinkedListNode(data)
       last = last.next
     }
     else {
-      last = new Node(data)
+      last = new SingleLinkedListNode(data)
       first = last
     }
   }
 
-  def dequeue: Node[A] = {
+  def dequeue: SingleLinkedListNode[A] = {
     if (first != null) {
       val temp = first
       first = first.next
-      return new Node(temp.data)
+      return new SingleLinkedListNode(temp.data)
     }
     null
   }

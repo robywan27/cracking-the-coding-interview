@@ -54,7 +54,7 @@ class Chapter1Test extends FunSuite {
     assert(_4_Anagrams.anagrams("placebo", "obecalp") === true)
     assert(_4_Anagrams.anagrams("placebo", "obacalp") === false)
     // notice the extra space after tom in the first string below; the algorithm checks
-    // each and every character for a match, including space and special characters
+    // each and every character for A match, including space and special characters
     assert(_4_Anagrams.anagrams("tom  marvolo riddle", "i am lord voldemort") === true)
     assert(_4_Anagrams.anagrams("madam curie", "radium came") === true)
 
@@ -73,10 +73,10 @@ class Chapter1Test extends FunSuite {
 
 
   test("_5_ReplaceSpaces") {
-    assert(_5_ReplaceSpaces.replaceSpaces("This is a string with many spaces") === "This%20is%20a%20string%20with%20many%20spaces")
+    assert(_5_ReplaceSpaces.replaceSpaces("This is A string with many spaces") === "This%20is%20a%20string%20with%20many%20spaces")
     assert(_5_ReplaceSpaces.replaceSpaces("This string   has  multiple contiguous    spaces") === "This%20string%20%20%20has%20%20multiple%20contiguous%20%20%20%20spaces")
 
-    assert(_5_ReplaceSpaces.replaceSpaces_2("This is a string with many spaces") === "This%20is%20a%20string%20with%20many%20spaces")
+    assert(_5_ReplaceSpaces.replaceSpaces_2("This is A string with many spaces") === "This%20is%20a%20string%20with%20many%20spaces")
     assert(_5_ReplaceSpaces.replaceSpaces_2("This string   has  multiple contiguous    spaces") === "This%20string%20%20%20has%20%20multiple%20contiguous%20%20%20%20spaces")
   }
 

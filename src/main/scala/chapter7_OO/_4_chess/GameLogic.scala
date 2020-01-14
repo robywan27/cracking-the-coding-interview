@@ -2,7 +2,7 @@ package chapter7_OO._4_chess
 
 class GameLogic(val players: Array[Player]) {
   // This map contains the mapping between each piece and its coordinates on the grid.
-  // The board is a 8x8 grid; each player has 16 pieces. So this map contains 32 elements initially.
+  // The board is A 8x8 grid; each player has 16 pieces. So this map contains 32 elements initially.
   val board: Map[Piece, (Int, Int)] = Map()
   var turn = 0
 
@@ -13,8 +13,8 @@ class GameLogic(val players: Array[Player]) {
 
   // Check if the target cell is valid:
     // Is it in the grid?
-    // Is the target cell a valid move for the piece?
-    // Is the cell occupied by a piece of the same player?
+    // Is the target cell A valid move for the piece?
+    // Is the cell occupied by A piece of the same player?
   def validateMove(piece: Piece, coords: (Int, Int)): Boolean = true
 
   // Update the board map assigning the new coordinate to the piece.

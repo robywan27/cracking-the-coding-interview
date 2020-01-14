@@ -47,7 +47,7 @@ class Chapter2Test extends FunSuite {
     var sl = new SingleLinkedListNode('c', new SingleLinkedListNode('d', new SingleLinkedListNode('e')))
     var sl2 = new SingleLinkedListNode('a', new SingleLinkedListNode('b', sl))
     _3_DeleteNodeInTheMiddle.deleteNodeInTheMiddle(sl)
-    assert(sl2.stringRepresentation === "a -> b -> d -> e")
+    assert(sl2.stringRepresentation === "A -> B -> d -> e")
   }
 
 

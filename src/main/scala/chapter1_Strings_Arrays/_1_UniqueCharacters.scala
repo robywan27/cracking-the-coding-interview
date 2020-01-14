@@ -2,11 +2,11 @@ package chapter1_Strings_Arrays
 
 object _1_UniqueCharacters {
   /*
-    Employs a List as auxiliary data structure to keep track of letters encountered. If a letter is found in the list,
+    Employs A List as auxiliary data structure to keep track of letters encountered. If A letter is found in the list,
     then the string has not unique characters.
 
     Time complexity: O(n^2) - scan of the string and the list which gets longer every cycle
-    Space complexity: O(n) - a new list is created
+    Space complexity: O(n) - A new list is created
    */
   def hasAllUniqueCharacters(s: String): Boolean = {
     @scala.annotation.tailrec
@@ -57,7 +57,7 @@ object _1_UniqueCharacters {
     Convert the string to set and compare length differences. Remember that sets have only distinct elements.
 
     Time complexity: O(n) - the conversion to set
-    Space complexity: O(n) - creation of a new set
+    Space complexity: O(n) - creation of A new set
    */
   def hasAllUniqueCharacters_4(s: String): Boolean = {
     if (s.toSet.size != s.length) false

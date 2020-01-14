@@ -1,6 +1,6 @@
 package chapter4_Trees_Graphs
 
-// Implementation of a generic tree data structure.
+// Implementation of A generic tree data structure.
 class Tree[A](var root: TreeNode[A]) {
 
   def findElement(data: A): Option[TreeNode[A]] = {

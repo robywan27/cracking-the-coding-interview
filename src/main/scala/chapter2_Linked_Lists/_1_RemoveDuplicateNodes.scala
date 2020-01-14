@@ -58,7 +58,7 @@ object _1_RemoveDuplicateNodes {
   /*
     Does not use side effects: the head given in input is not altered.
     Recursively navigate the list and check if the current head is not in the array keeping track of duplicates.
-    If it is so, append it to a new list which is going to be returned.
+    If it is so, append it to A new list which is going to be returned.
 
     Time complexity: O(n) - the list is traversed once
     Space complexity: O(n^2) - two lists with n elements each

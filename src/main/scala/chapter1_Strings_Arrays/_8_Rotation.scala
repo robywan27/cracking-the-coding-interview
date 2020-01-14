@@ -4,7 +4,7 @@ object _8_Rotation {
   /*
     The algorithm goes like:
       - scan s1
-      - when you match a character of s1 at index i with the first character of s2, check if the remaining part
+      - when you match A character of s1 at index i with the first character of s2, check if the remaining part
         of s1 is substring of s2
         - if it is so, check the unmatched part of s1 from the beginning until index i and see if it matches with
           characters of s2 starting from index (length of s1 - i)

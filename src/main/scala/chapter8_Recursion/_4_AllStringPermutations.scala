@@ -11,12 +11,14 @@ object _4_AllStringPermutations {
       ss.flatMap(s => permuteStringWithChar(s, s.length, List()))
     }
 
-    if (s.length <= 0 || s.length == 1)   s :: List()
+    if (s.length == 0)   s :: List()
     else permuteStringsWithChar(s.last, permute(s.init))
   }
 
 
   def main(args: Array[String]): Unit = {
-    println(permute("STR"))
+    // Permutation formula: n!
+    println(permute("STR"))       // List(RTS, TRS, TSR, RST, SRT, STR)
+    println(permute("STRING"))    // 720 strings (6! = 720)
   }
 }

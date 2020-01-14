@@ -4,7 +4,7 @@ import util.control.Breaks._
 
 object _4_Anagrams {
   /*
-    Imperative style. For each letter in s1, check if there is a match in s2; when the match is encountered,
+    Imperative style. For each letter in s1, check if there is A match in s2; when the match is encountered,
     remove the matched character from the second string. In case there was no match the two words are not anagrams,
     so break out of the inner cycle and return false.
 
@@ -41,7 +41,7 @@ object _4_Anagrams {
   def anagrams_2(s1: String, s2: String): Boolean = s1.toSeq.sortWith(_ < _).unwrap == s2.toSeq.sortWith(_ < _).unwrap
 
   /*
-    More modular and functional. Check for each character in s1 if there is a match in s2.
+    More modular and functional. Check for each character in s1 if there is A match in s2.
 
     Time complexity: O(n) - both strings (of same length) are scanned from end to end
     Space complexity: O(1) - no other data structures are created

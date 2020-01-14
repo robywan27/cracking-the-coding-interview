@@ -33,7 +33,7 @@ object _7_ResetRowColumn {
   }
 
   /*
-    Scan the matrix and store a dummy value (1) at the right row/column index in two ancillary arrays.
+    Scan the matrix and store A dummy value (1) at the right row/column index in two ancillary arrays.
     Scan the matrix again and check the dummy value in the auxiliary arrays at the corresponding row/column index.
 
     Time complexity: O(m*n) - scan the matrix twice

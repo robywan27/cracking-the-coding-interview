@@ -10,9 +10,9 @@ object _5_ReplaceSpaces {
   def replaceSpaces(s: String): String = s.replaceAll("\\s", "%20")
 
   /*
-    Recursively build a new string from the original substituting spaces with %20.
-    The functional style confers a concise and terse quality to the solution which would otherwise be messy in the
-    imperative style. This shows how avoiding mutation while recursively returning copies can improve a solution.
+    Recursively build A new string from the original substituting spaces with %20.
+    The functional style confers A concise and terse quality to the solution which would otherwise be messy in the
+    imperative style. This shows how avoiding mutation while recursively returning copies can improve A solution.
 
     Time complexity: O(n) - scan the string
     Space complexity: O(1) - no additional data structure is created

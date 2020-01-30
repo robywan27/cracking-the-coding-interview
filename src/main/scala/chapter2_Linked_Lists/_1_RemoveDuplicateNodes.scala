@@ -32,9 +32,6 @@ object _1_RemoveDuplicateNodes {
 
   /*
     For each node from the start check if its data value is contained in later nodes; for any duplicate remove it from the list.
-
-    Time complexity: maybe O(n^2) - the list is scanned first time N times, second time N - 1 times, etc
-    Space complexity: O(1)
    */
   def removeDuplicates_2[A](head: SingleLinkedListNode[A]): Unit = {
     var nodeToCompare = head

@@ -4,10 +4,6 @@ object _7_ResetRowColumn {
   /*
     Scan the matrix to find the coordinates of 0 elements and save them in an array.
     Scan the array and zero all positions in same row and column for each element.
-
-    Time complexity: O(m^2*n^2) - first scan of the matrix, then again scan of the elements of the array which may be
-      almost all the matrix elements
-    Space complexity: O(m*n) - the array may contain almost all elements in the matrix
    */
   def resetRowColumn(mat: Array[Array[Int]]): Array[Array[Int]] = {
     val m = mat.length

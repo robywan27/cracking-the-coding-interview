@@ -8,9 +8,6 @@ object _8_Rotation {
         of s1 is substring of s2
         - if it is so, check the unmatched part of s1 from the beginning until index i and see if it matches with
           characters of s2 starting from index (length of s1 - i)
-
-    Time complexity: O(n^2) + isSubstring complexity - scan s1 in isRotation and apply isSubstring
-    Space complexity: O(1) - no additional data structure
    */
   def isRotation(s1: String, s2: String): Boolean = {
     if (s1.length != s2.length)
@@ -30,10 +27,6 @@ object _8_Rotation {
     false
   }
 
-  /*
-    Time complexity: complexity of isSubstring
-    Space complexity: O(n) - another s1 copy is created
-   */
   def isRotation_2(s1: String, s2: String): Boolean = if (isSubstring(s1 + s1, s2)) true else false
 
   /*

@@ -17,10 +17,10 @@ class BinarySearchTree[A](root: BinaryTreeNode[A], precedes: A => A => Boolean) 
   def insert(data: A): Unit = {
     var curr = root
     while (curr.left.isDefined && curr.right.isDefined)
-      if (precedes(data)(curr.data))  curr = curr.left.get
+      if (precedes(data)(curr.data)) curr = curr.left.get
       else curr = curr.right.get
 
-    if (precedes(data)(curr.data))    curr.left = Some(new BinaryTreeNode[A](data, None, None))
+    if (precedes(data)(curr.data)) curr.left = Some(new BinaryTreeNode[A](data, None, None))
     else curr.right = Some(new BinaryTreeNode[A](data, None, None))
   }
 
@@ -31,10 +31,10 @@ class BinarySearchTree[A](root: BinaryTreeNode[A], precedes: A => A => Boolean) 
 
 object BinarySearchTreeTester {
   def main(args: Array[String]): Unit = {
-    val lf1 = new BinaryTreeNode(2, None, None)
-    val lf2 = new BinaryTreeNode(7, None, None)
-    val lf3 = new BinaryTreeNode(13, None, None)
-    val lf4 = new BinaryTreeNode(22, None, None)
+    val lf1 = new BinaryTreeNode(2)
+    val lf2 = new BinaryTreeNode(7)
+    val lf3 = new BinaryTreeNode(13)
+    val lf4 = new BinaryTreeNode(22)
     val firstLevelNode1 = new BinaryTreeNode(5, Some(lf1), Some(lf2))
     val firstLevelNode2 = new BinaryTreeNode(20, Some(lf3), Some(lf4))
     val root = new BinaryTreeNode(10, Some(firstLevelNode1), Some(firstLevelNode2))

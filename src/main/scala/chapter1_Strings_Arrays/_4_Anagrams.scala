@@ -7,9 +7,6 @@ object _4_Anagrams {
     Imperative style. For each letter in s1, check if there is A match in s2; when the match is encountered,
     remove the matched character from the second string. In case there was no match the two words are not anagrams,
     so break out of the inner cycle and return false.
-
-    Time complexity: between O(n*logn) and O(n^2) - two cycles, even though the second cycle gets shorter at each iteration
-    Space complexity: O(1) - no additional data structures are used
    */
   def anagrams(s1: String, s2: String): Boolean = {
     if (s1.length != s2.length)
@@ -34,9 +31,6 @@ object _4_Anagrams {
 
   /*
     Sort strings and compare them.
-
-    Time complexity: apx O(n^2) - two sequences are created and sorted
-    Space complexity: presumably O(n^2) - two sequences are created for each string
    */
   def anagrams_2(s1: String, s2: String): Boolean = s1.toSeq.sortWith(_ < _).unwrap == s2.toSeq.sortWith(_ < _).unwrap
 

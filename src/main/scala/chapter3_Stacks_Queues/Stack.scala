@@ -11,11 +11,17 @@ class Stack[A](var top: SingleLinkedListNode[A] = null) {
 
   def pop: SingleLinkedListNode[A] = {
     if (top != null) {
-      val headContent = top.data
+      val headData = top.data
       top = top.next
-      return new SingleLinkedListNode(headContent)
+      return new SingleLinkedListNode(headData)
     }
     null
+  }
+
+  def peek(): SingleLinkedListNode[A] = {
+    val topNode = pop
+    push(topNode.data)
+    topNode
   }
 }
 
